@@ -13,11 +13,19 @@ asc n m
                                 -- of the list
 
 {-
+    -------------------------------------------------------------
     important functions on lists
-    head -> gives you the first element of a list
-    tail -> gives you the tail of a list (list without the first element)
-    length -> gives you the length of a list
-    init -> gives you a list with the last element removed
+    -------------------------------------------------------------
+    head :: [a] -> a: gives you the first element of a list
+    tail :: [a] -> [a]: gives you the tail of a list (list without the first element)
+    length :: [a] -> Int: gives you the length of a list
+    init :: [a] -> [a] gives you a list with the last element removed
+    null :: [a] -> Bool return a bool determining if the list is empty or not
+    --------------------------------------------------------------
+    functions on lists of booleans
+    --------------------------------------------------------------
+    and :: [Bool] -> Bool: does the boolean and on any amount of elements on a list of booleans
+    or :: [Bool] -> Bool: does the boolean or on any amount of elements on a list of booleans
 -}
 
 main :: IO ()
