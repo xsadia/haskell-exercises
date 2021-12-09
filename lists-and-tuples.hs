@@ -28,5 +28,40 @@ asc n m
     or :: [Bool] -> Bool: does the boolean or on any amount of elements on a list of booleans
 -}
 
+{- 
+    List comprehension is used to take one list or multiple lists
+    and return new lists out of them:
+    [2*x | x <- [1, 2, 3]]: [2, 4, 6]
+    [2*x | x <- [1, 2, 3], x > 1]: [4, 6] -- using guard to ignore all xs that are smaller than 1
+    Using multiple lists:
+    You first go through the first list starting from the first element
+    then go through the second list. So we start at element of list x 1 then
+    go through the second list ['a', 'b']
+    [(x, y) | x <- [1, 2 ,3], y <- ['a', 'b']]: [(1, a), (1, b), (1, c), (2, a), (2, b) ...]
+-}
+
+{- List Patterns -}
+sumList :: [Int] -> Int 
+sumList [] = 0
+sumList (x:xs) = x + sumList xs
+
+evens :: [Int] -> [Int]
+evens [] = []
+evens (x:xs) 
+    | mod x 2 == 0 = x : evens xs
+    | otherwise    = evens xs
+
+{-
+    Tuples
+    (1, 2) :: (Int, Int)
+    let (x, y) = (1, 2) in x
+-}
+idk :: Int
+idk = let (x, y) = (1, 2) in y -- 2
+
+addTuples :: [(Int, Int, Int)] -> [Int]
+addTuples xs = [x + z | (x, y, z) <- xs]
+
+
 main :: IO ()
 main = undefined 
